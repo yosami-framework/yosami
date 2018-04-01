@@ -1,0 +1,11 @@
+{
+  "name": "yosami",
+  "bin": "bin/yosami-install",
+  "version": "0.0.1",
+  "description": "mithril.js based application framework.",
+  "scripts": {
+    "test": "rm -rf ./tmp && mkdir ./tmp && cd ./tmp && ../bin/yosami-install"
+  },
+  "author": "alfa-jpn",
+  "license": "ISC"
+}

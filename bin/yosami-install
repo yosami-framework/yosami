@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+const path   = require('path');
+const {exec} = require('child_process');
+
+const paths = process.cwd().split(path.sep);
+const name  = paths[paths.length - 1];
+
+const commands = [
+  'npm init -y',
+  'npm install --save-dev track-generator',
+  'echo "module.exports = require(\'track-generator\')(__dirname);\n" > ./plopfile.js',
+  `./node_modules/.bin/plop application ${name}`,
+];
+
+console.log('Installing yosami, please wait for a few minutes...');
+exec(commands.join('&&'), (error, stdout, stderr) => {
+  console.log(stdout);
+
+  if (error) {
+    console.error(stderr);
+    process.exit(1);
+  } else {
+    console.log('Thanks for installing yosami 🙌!');
+    process.exit(0);
+  }
+});

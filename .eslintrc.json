@@ -1,0 +1,21 @@
+{
+  "extends": "google",
+  "parserOptions": {
+    "ecmaVersion": 6
+  },
+  "rules": {
+    "key-spacing": ["error", {
+      "align": "value"
+    }],
+    "no-multi-spaces": ["error", {
+      "exceptions": {
+        "ImportDeclaration":  true,
+        "VariableDeclarator": true
+      }
+    }],
+    "max-len": ["error", {
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true
+    }]
+  }
+}
