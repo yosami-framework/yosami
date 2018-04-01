@@ -14,7 +14,7 @@ $ npm install --save-dev yosami
 ### install
 
 ```shell
-$ ./node_modules/.bin/yosami-install
+$ ./node_modules/.bin/yosami
 ```
 
 ## Usage
