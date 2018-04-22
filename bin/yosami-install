@@ -1,15 +1,22 @@
 #!/usr/bin/env node
-const path   = require('path');
-const {exec} = require('child_process');
+const path     = require('path');
+const {exec}   = require('child_process');
+const versions = require('../lib/versions');
 
 const paths = process.cwd().split(path.sep);
 const name  = paths[paths.length - 1];
 
+if (process.argv[2] == 'latest') {
+  versions['mithril'] = 'latest';
+  versions['track-packages'] = 'latest';
+  versions['track-generator'] = 'latest';
+}
+
 const commands = [
   'npm init -y',
-  'npm install --save-dev track-generator',
+  `npm install --save-dev track-generator@${versions['track-generator']}`,
   'echo "module.exports = require(\'track-generator\')(__dirname);\n" > ./plopfile.js',
-  `./node_modules/.bin/plop application ${name}`,
+  `./node_modules/.bin/plop application ${name} ${versions['mithril']} ${versions['track-packages']} ${versions['track-generator']}`,
 ];
 
 console.log('Installing yosami, please wait for a few minutes...');
