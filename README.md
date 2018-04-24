@@ -45,10 +45,6 @@ http://localhost:3001/hoge
 $ npm start # = npm run build && npm run prod
 ```
 
------
-
-### Create component
-
-```javascript
-$ npm run generate component fuga
-```
+## Document
+- [ja] [https://yosami-framework.github.io/ja/](https://yosami-framework.github.io/ja/)
+- [en] help me 🙇🙇🙇
